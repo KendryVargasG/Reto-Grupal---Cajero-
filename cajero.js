@@ -1,41 +1,49 @@
-const teclado = require('prompt-sync')();
-let nombre = teclado("¿Cuál es tu nombre? ");
-console.log("Hola, " + nombre + "!");
+const prompt = require('prompt-sync')();
 
-let numero1 = teclado("Escriba un numero")
-let operacion = teclado("Elige +,-,*,/,")
-let numero2 = teclado("Escribe otro numero")
-let resultado = Number(numero1) + Number(numero2)
+// Variables
+
+let activo = true;
+
+let numero1;
+let operacion;
+let numero2;
+let resultado;
 
 
-console.log(resultado)
-if(operacion == "+"){
-    console.log(Number(numero1) + Number(numero2))
+// Logica
+
+while (activo) {
+
+    numero1 = Number(prompt("Ingresa el primer número: "));
+    operacion = prompt("Ingresa la operación (+, -, *, /): ");
+    numero2 = Number(prompt("Ingresa el segundo número: "));
+
+    if (operacion === "+") {
+        resultado = numero1 + numero2;
+    } else if (operacion === "-") {
+        resultado = numero1 - numero2;
+    } else if (operacion === "*") {
+        resultado = numero1 * numero2;
+    } else if (operacion === "/") {
+        if (numero2 === 0) {
+            resultado = "No se puede dividir entre cero";
+        } else {
+            resultado = numero1 / numero2;
+        }
+    } else {
+        resultado = "Operación no válida";
+    }
+
+
+    // Impresion
+
+    console.log("Resultado:", resultado);
+
+    let continuar = prompt("¿Quieres realizar otra operación? (si/no): ");
+
+    if (continuar.toLowerCase() === "no") {
+        activo = false;
+    }
 }
-if(operacion == "-"){
-    console.log(Number(numero1) - Number(numero2))
-}
-if(operacion == "*"){
-    console.log(Number(numero1) * Number(numero2))
-}
-if(operacion == "/"){
-    console.log(Number(numero1) / Number(numero2))
-}
 
-/*switch (operacion) {
-  case "+":
-    console.log(Number(numero1) + Number(numero2));
-    break; // Evita que continúe ejecutando los siguientes casos
-  case "-":
-    console.log(Number(numero1) - Number(numero2));
-    break;
-
-    case "*":
-    console.log(Number(numero1) * Number(numero2));
-    break;
-
-    case "/":
-    console.log(Number(numero1) / Number(numero2));
-    break;
-  
-}*/
+console.log("Listo todo :D");

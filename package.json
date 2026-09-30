@@ -1,0 +1,24 @@
+{
+  "name": "gen15_cajero",
+  "version": "1.0.0",
+  "description": "Trabajo colaborativo del equipo 3. Generation Colombia. Integrantes: Juliana Escarraga - Jesús David López - Kendry Y. Vargas",
+  "main": "cajero.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KendryVargasG/Reto-Grupal---Cajero-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KendryVargasG/Reto-Grupal---Cajero-/issues"
+  },
+  "homepage": "https://github.com/KendryVargasG/Reto-Grupal---Cajero-#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
